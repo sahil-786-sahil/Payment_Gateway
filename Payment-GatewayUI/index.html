@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>A-One Juice & Fast Food Centre</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Left Side: Order Summary & Payment -->
+      <div class="payment-section">
+        <h1>Your Order</h1>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter Name" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter Email" />
+        </div>
+
+        <div class="form-group">
+          <label for="phone">Phone (WhatsApp enabled)</label>
+          <div class="phone-input">
+            <div class="flag">
+              <img src="image.png" alt="IN" />
+              <span>+91</span>
+            </div>
+            <input type="tel" id="phone" placeholder="Enter Phone" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Items in Cart</label>
+          <div class="items-list" id="cartItems">
+            <div class="empty-cart">
+              <i
+                class="fas fa-shopping-cart"
+                style="font-size: 40px; margin-bottom: 10px"
+              ></i>
+              <p>No items in cart. Add items from menu!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div class="price-row">
+            <span>Subtotal</span>
+            <span id="subtotal">₹0.00</span>
+          </div>
+          <div class="price-row">
+            <span>Tax (5%)</span>
+            <span id="tax">₹0.00</span>
+          </div>
+          <div class="price-row total-row">
+            <span>Total</span>
+            <span id="total">₹0.00</span>
+          </div>
+        </div>
+
+        <button class="pay-button" id="payButton">
+          <i class="fas fa-lock"></i> Place Order ₹0
+        </button>
+        <div class="payment-methods">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-amex"></i>
+          <i class="fab fa-google-pay"></i>
+          <i class="fab fa-apple-pay"></i>
+        </div>
+        <div class="secure-text">
+          <i class="fas fa-shield-alt"></i> Secure payment - 100% safe checkout
+        </div>
+      </div>
+
+      <!-- Right Side: Menu Items -->
+      <div class="menu-section">
+        <h1>A-One Juice & Fast Food Centre</h1>
+
+        <div class="banner">
+          <img
+            src="foodbanner.png"
+            alt="A-One Juice & Fast Food Banner"
+            onerror="this.src='https://via.placeholder.com/1200x250/2b2b2b/ffd700?text=A-One+Juice+%26+Fast+Food'"
+          />
+        </div>
+
+        <p style="margin-bottom: 20px; color: #6b7280">
+          Located in Vrindavan, Kishor Pura Teli Pada near Gautam Sardar Guest
+          House. Open 7 AM to 11 PM.
+        </p>
+
+        <div class="menu-categories">
+          <button class="category-btn active" data-category="all">
+            All Items
+          </button>
+          <button class="category-btn" data-category="juice">Juices</button>
+          <button class="category-btn" data-category="fastfood">
+            Fast Food
+          </button>
+          <button class="category-btn" data-category="snacks">Snacks</button>
+        </div>
+
+        <div class="menu-items" id="menuItems"></div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
